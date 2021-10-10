@@ -1,4 +1,4 @@
-package ru.mirea.java.practice15;
+package ru.mirea.java.practice15.ex1w;
 import java.lang.StringBuffer;
 public class PhoneNumber {
     StringBuffer outputString = new StringBuffer("");

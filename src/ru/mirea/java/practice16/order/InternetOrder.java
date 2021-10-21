@@ -1,9 +1,10 @@
-package ru.mirea.java.practice16;
+package ru.mirea.java.practice16.order;
 
-import java.util.Comparator;
+import ru.mirea.java.practice16.Item.Item;
+
 import java.util.LinkedList;
 
-public class InternetOrder {
+public class InternetOrder implements Order {
     LinkedList<Item> a = new LinkedList<Item>();
 
     public InternetOrder() {
@@ -16,17 +17,16 @@ public class InternetOrder {
         a.add(item);
         return true;
     }
-    public int remove(String dishName){
-        int count = 0 ;
+    public boolean remove(String itemName){
         for (Item it: a) {
-                if (it.getName().equals(dishName)) {
+                if (it.getName().equals(itemName)) {
                     a.remove(it);
-                    count++;
+                    return true;
                 }
         }
-        return count;
+        return false;
     }
-    public int dishQuantity(){
+    public int itemQuantity(){
         return a.size();
     }
 
@@ -46,7 +46,7 @@ public class InternetOrder {
         }
         return count;
     }
-    public int itemCapacity(String itemName){
+    public int itemQuantity(String itemName){
         int count = 0;
         for (Item it: a) {
             if (it.getName().equals(itemName))

@@ -14,7 +14,7 @@ public class Main {
         k.createPhoneNumber(a);
         System.out.println(k.toString());
         a.delete(0,a.length());
-        a.append("89175655655");
+        a.append("89175565565");
         k.createPhoneNumber(a);
         System.out.println(k.toString());
     }

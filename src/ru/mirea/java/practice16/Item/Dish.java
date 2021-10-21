@@ -1,16 +1,19 @@
-package ru.mirea.java.practice16;
+package ru.mirea.java.practice16.Item;
 
-public class Drink implements Item{
+public class Dish implements Item {
     private final int price;
     private final String name;
     private final String description;
     private final int priceZero = 0;
-    public Drink(int price, String name, String description) {
+    public Dish(int price, String name, String description) throws IllegalArgumentException{
+        if(price < 0 || name.equals("") || description.equals(""))
+            throw new IllegalArgumentException();
         this.price = price;
         this.name = name;
         this.description = description;
     }
-    public Drink(String name, String description) {
+    public Dish(String name, String description) throws IllegalArgumentException{
+        if(name.equals("") || description.equals("")) throw new IllegalArgumentException();
         this.price = priceZero;
         this.name = name;
         this.description = description;
